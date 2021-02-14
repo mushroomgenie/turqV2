@@ -2,14 +2,12 @@ import React, { useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { connect } from 'react-redux'
-import { Share } from 'react-twitter-widgets'
 import { Button } from "@material-ui/core"
 import { Link } from "react-router-dom";
 
 import Layout from "../components/layout/layout"
 import { resetPayment } from "../actions/paymentsActions"
 import { fetchAllContests } from "../actions/contestActions"
-import { TWITTER_SHARE_TEXT } from "../constants"
 import { HOME_PAGE_URL } from "../constants"
 import ContestPanelList from "../components/competition/contestPanelList"
 
