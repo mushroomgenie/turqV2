@@ -1,0 +1,27 @@
+.numberCircle {
+  width: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 62px;
+  border: 2px solid $dark-gray;
+  color: $white;
+  display: inline-block;
+}
+
+.background-secondary {
+  background: $turq-secondary;
+}
+
+.background-primary {
+  background: $turq-primary;
+}
+
+.numberCircleTitle {
+  text-align: center;
+}
+
+.numberCircleDetail {
+  text-align: left;
+  display: block;
+}

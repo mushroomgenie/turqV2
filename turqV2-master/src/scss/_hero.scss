@@ -1,0 +1,42 @@
+.hero-bg {
+  width:100%;
+  height:auto;
+  float: left;
+  
+}
+.hero-blur {
+  
+  width:100%;
+  background-size:cover;
+  height:auto;
+  
+  background: linear-gradient( rgba(10,10,10, .65), rgba(10,10,10, .95)), url(/images/hero_image.jpeg);
+  border-bottom: 6px solid $turq-primary;
+  min-height:501px;
+  float: left;
+}
+.hero-header {
+  color:white;
+  float: left;
+  width:100%;
+  padding: 50px 20px 10px 40px;
+  
+}
+.hero-subtitle {
+  color:white;
+  float:left;
+  padding: 10px 20px 10px 40px;
+  
+}
+.hero-button{
+  padding-left: 40px;
+}
+.hero-video >iframe{
+  
+  float: left;
+  padding: 20px;
+  margin-left:5%;
+}
+
+
+
