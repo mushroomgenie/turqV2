@@ -1,3 +1,4 @@
+/* global gapi */
 import React from "react"
 import { connect } from 'react-redux'
 import { Redirect, Link } from "react-router-dom"
@@ -20,7 +21,23 @@ class LoginPage extends React.Component {
     this.state = { referer, creds: { email: '', password: ''}}
     this.handleChange = this._handleChange.bind(this)
   }
-
+  componentDidMount(){
+    function onSuccess(googleUser) {
+      console.log(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().id_token)
+     }
+     function onFailure(error) {
+       localStorage.setItem('error google ->',error.error)
+     }
+    gapi.signin2.render('my-signin2', {
+      'scope': 'profile email',
+      'width': 400,
+      'height': 50,
+      'longtitle': true,
+      'theme': 'dark',
+      'onsuccess': onSuccess,
+      'onfailure': onFailure
+    });
+  }
   _handleChange(event) {
     this.setState({ ...this.state,
       creds: { ...this.state.creds, [event.target.id]: event.target.value }

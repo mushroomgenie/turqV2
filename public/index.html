@@ -38,26 +38,7 @@
     <!-- End Google Tag Manager -->
     <!-- Google Places API -->
     <!-- Googel Sign In API-->
-    <script>
-      function onSuccess(googleUser) {
-       localStorage.setItem('Logged in as: ' + googleUser.getBasicProfile().getName());
-      }
-      function onFailure(error) {
-        localStorage.setItem('error google ->',error)
-      }
-      function renderButton() {
-        gapi.signin2.render('my-signin2', {
-          'scope': 'profile email',
-          'width': 400,
-          'height': 50,
-          'longtitle': true,
-          'theme': 'dark',
-          'onsuccess': onSuccess,
-          'onfailure': onFailure
-        });
-      }
-    </script>
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc_17yJgbq06qqqpzTkjKwdFzoyOBfqIs&libraries=places"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JPQKJKR2CM"></script>
