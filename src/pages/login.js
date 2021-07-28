@@ -4,12 +4,10 @@ import { Redirect, Link } from "react-router-dom"
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'
-import ButtonBase from '@material-ui/core/ButtonBase'
-
+import Divider from '@material-ui/core/Divider'
 import { login } from "../actions/login"
 import Layout from "../components/layout/layout"
 import { POST_CONTEST_PAGE_URL } from "../constants";
-import GoogleSignIn from "../images/btn_google_signin_light_normal_web.png"
 
 class LoginPage extends React.Component {
 
@@ -43,7 +41,7 @@ class LoginPage extends React.Component {
     return (
       <Layout pageTitle="Login">
       <Grid container spacing={0} className="main login-form-area" justify="center">
-        <Grid item xs={10} md={9} xl={6}>
+        <Grid item xs={10} md={4} xl={4}>
           <h2>Sign In</h2>
           <form>
             <Grid item xs={12}>
@@ -93,9 +91,10 @@ class LoginPage extends React.Component {
               </Grid>
             </Grid>
           </form>
-        <ButtonBase classes={{root:"google_sign_in"}}>
-          <img src={GoogleSignIn} alt="google-sign-in"/>
-        </ButtonBase>
+        </Grid>
+        <Divider orientation="vertical" flexItem variant="inset" />
+        <Grid item md={4} xs={10} xl={4}>
+        <div id="my-signin2"></div>
         </Grid>
       </Grid>
       </Layout>
