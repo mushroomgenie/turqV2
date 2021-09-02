@@ -8,7 +8,7 @@ import { useHistory } from "react-router"
 const HeadlineForm = (props) => {
     const dispatch = useDispatch()
     const history = useHistory()
-    const [headline,setHeadline] = useState("")
+    const [headline,setHeadline] = useState(localStorage.getItem("postIssue") ? JSON.parse(localStorage.getItem('postIssue')).title : "")
     const moveToNextTab = () => {
         dispatch({type:"SAVE_HEADLINE",headline:headline})
         props.changeTab(1,40)
