@@ -29,7 +29,7 @@ class LoginPage extends React.Component {
   onSuccess(googleUser) {
     axios.post(GOOGLE_LOGIN_URL,{token: gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().id_token})
       .then((response) => {
-         if('email' in response && 'jwttoken' in response){
+         if(response.data.email !== undefined && response.data.jwttoken !== undefined){
           this.props.dispatch(
             loginSuccess(response.data.jwttoken,
             response.data.email))
