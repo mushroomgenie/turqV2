@@ -44,7 +44,7 @@ const GoalRing = ({ currentFunding }) => {
       }
     }
     return () => { }
-  }, []);
+  }, [currentFunding, getTier, tiers]);
 
   function calculateSepDegrees() {
     return ((currentFunding / tiers[currentTier.current].max) * 270) / 75
@@ -61,9 +61,9 @@ const GoalRing = ({ currentFunding }) => {
     <div className="ring-wrapper">
       <svg style={{ height: 0 }}>
         <defs>
-          <linearGradient id={gradientId} gradientTransform={`rotate(${calculateGradientDegrees().rotation})`}>
-            <stop offset="0%" stopColor={barColor.start} />
-            <stop offset={calculateGradientDegrees().offset} stopColor={barColor.end} />
+          <linearGradient id={gradientId} gradientTransform={`rotate(90)`}>
+            <stop offset="0%" stopColor={barColor.end} />
+            <stop offset="100%" stopColor={barColor.start} />
           </linearGradient>
         </defs>
       </svg>

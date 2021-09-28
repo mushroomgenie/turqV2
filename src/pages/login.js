@@ -24,6 +24,7 @@ class LoginPage extends React.Component {
     this.handleChange = this._handleChange.bind(this)
     this.onSuccess = this.onSuccess.bind(this)
     this.onFailure = this.onFailure.bind(this)
+    this.handleKeyPress = this.handleKeyPress.bind(this)
   }
 
   onSuccess(googleUser) {
@@ -36,6 +37,12 @@ class LoginPage extends React.Component {
          }
           })
   } 
+  handleKeyPress = (event) => {
+    if(event.key === "Enter" && this.state.creds.password.length > 0 && this.state.creds.email.length > 0){
+      this.props.dispatch(login(this.state.creds))
+    }
+
+}
   onFailure(error) {
     toast.error("Login failed")
   }
@@ -101,6 +108,7 @@ class LoginPage extends React.Component {
                 InputLabelProps={{
                   shrink: true,
                 }}
+                onKeyPress={this.handleKeyPress}
                 variant="outlined"
                 type="password"
               />
