@@ -44,7 +44,7 @@ const GoalRing = ({ currentFunding }) => {
       }
     }
     return () => { }
-  }, [currentFunding, getTier, tiers]);
+  }, []);
 
   function calculateSepDegrees() {
     return ((currentFunding / tiers[currentTier.current].max) * 270) / 75
